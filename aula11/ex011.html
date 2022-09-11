@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            font: normal 15pt arial;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verifique se você é do Brasil ou Estrangeiro!</h1>
+
+    <label for="pais">País de origem:</label>
+    <input type="text" name="pais" id="pais">
+    <input type="button" value="Enviar" onclick="verificar()">
+    <div id="resultado"></div>
+
+    <script>
+        function verificar(){
+            let pais = document.querySelector('input#pais').value.toUpperCase()
+            let res = document.querySelector('div#resultado')
+            res.innerHTML = `<p>Você é do país: <strong>${pais}</strong></p>`
+
+            if(pais == 'BRASIL'){
+                res.innerHTML += `<p>Você é <strong>BRASILEIRO!</strong></p>`
+            } else {
+                res.innerHTML += `<p>Você é <strong>ESTRANGEIRO!</strong></p>`
+            }
+        }
+
+    </script>
+</body>
+</html>
